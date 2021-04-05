@@ -6,16 +6,16 @@ public class Homework {
     public static void main(String[] args) {
         //Некоторые тесты для проверки задач. Можно также написать свои тесты.
         printArray();
-        System.out.println(operation(1));
-        System.out.println(operation(0));
-        System.out.println(calculateCountOfOddElementsInMatrix(new int[]{1, 2, 3, 4, 5, 6}));
-        calculateSumOfDiagonalElements();
-        countDevs(103);
-        foobar(6);
-        foobar(10);
-        foobar(15);
-        printMatrix();
-        printPrimeNumbers();
+//        System.out.println(operation(1));
+//        System.out.println(operation(0));
+//        System.out.println(calculateCountOfOddElementsInMatrix(new int[]{1, 2, 3, 4, 5, 6}));
+//        calculateSumOfDiagonalElements();
+//        countDevs(103);
+//        foobar(6);
+//        foobar(10);
+//        foobar(15);
+//        printMatrix();
+//        printPrimeNumbers();
     }
 
     /**
@@ -56,6 +56,7 @@ public class Homework {
      * заменить _COUNT_ на число которое пришло на вход в метод и заменить окончание в слове "программистов" на
      * уместное с точки зрения русского языка.
      * Пример: 1 программист, 42 программиста, 50 программистов
+     *
      * @param count - количество программистов
      */
     public static void countDevs(int count) {

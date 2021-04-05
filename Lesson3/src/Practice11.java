@@ -16,22 +16,21 @@ public class Practice11 {
 
         //многомерные массивы
         int[][] nums2 = {
-                { 0, 1, 2 },
-                { 3, 4, 5 }
+                {0, 1000, 2},
+                {30, 4, 5}
         };
 
         // можно так вывести
         for (int[] ints : nums2) {
-            for (int anInt : ints) {
-                System.out.println(anInt);
-            }
+            System.out.println(Arrays.toString(ints));
         }
 
-        //for
+//        //printf для форматированного вывода
         for (int i = 0; i < nums2.length; i++) {
             for (int j = 0; j < nums2[i].length; j++) {
-                System.out.println(nums2[i][j]+" ");
+                System.out.printf("%5d", nums2[i][j]);
             }
+            System.out.println();
         }
     }
 

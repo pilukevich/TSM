@@ -18,6 +18,7 @@ class HomeworkTest {
 
     @Test
     void max() {
+        System.out.println("max");
     }
 
     @Test
