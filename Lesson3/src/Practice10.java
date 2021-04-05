@@ -5,25 +5,33 @@ public class Practice10 {
         //поговорим про массивы
         int[] mass = new int[10];
         Arrays.fill(mass, 3);
+
         int[] temp = mass;
         mass[3] = 5;
         mass[4] = 6;
         System.out.println(Arrays.toString(mass));
         System.out.println(Arrays.toString(temp));
 
+        System.out.println(mass == temp);
+//
         //копирование
         int[] temp2 = new int[10];
         System.arraycopy(mass,0,temp2,0,mass.length);
-        temp2[3] = 11;
         System.out.println(Arrays.toString(temp2));
 
-        //как проверить равны ли массивы
+        System.out.println(mass == temp2);
+
+        temp2[3] = 11;
+        System.out.println("-----");
+        System.out.println(Arrays.toString(mass));
+        System.out.println(Arrays.toString(temp2));
+//
+//        //как проверить равны ли массивы
         for (int i = 0; i < mass.length; i++) {
             if (mass[i] == temp2[i]) {
                 System.out.println("equals");
             } else {
                 System.out.println("not equals");
-                break;
             }
         }
         System.out.println("ARR: "+Arrays.equals(mass, temp2));
