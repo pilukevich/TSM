@@ -1,3 +1,11 @@
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+
+import static java.util.Collections.singleton;
+import static java.util.stream.Collectors.toSet;
+
 public class Homework {
     public static void main(String[] args) {
 //        Задачи:
@@ -44,6 +52,36 @@ public class Homework {
 //        Массив имеет повторяющиеся элементы 3, 2
 //        Пример: {0,34,46,31,20,1,28}
 //        Массив не имеет повторяющихся элементов
+        int[] mass = {0, 3, 46, 3, 2, 3, 2};
+        Arrays.sort(mass);
+
+        //вариант 1
+        int length = mass.length;
+        int count = 0;
+        for (int i = 0, j = i + 1; i < length && j < length; i++, j++) {
+            if (mass[i] == mass[j]) {
+                count++;
+            } else {
+                if (count > 0) {
+                    System.out.print(mass[i] + ", ");
+                    count = 0;
+                }
+            }
+        }
+
+        System.out.println();
+        //вариант 2
+        Set<Integer> tempElements = new HashSet<>();
+        Set<String> repeatElements = Arrays.stream(mass)
+                .filter(integer -> !tempElements.add(integer))
+                .mapToObj(String::valueOf)
+                .collect(toSet());
+
+        if (repeatElements.isEmpty()) {
+            System.out.println("Массив не имеет повторяющихся элементов");
+        } else {
+            System.out.println("Массив имеет повторяющиеся элементы " + String.join(", ", repeatElements));
+        }
 
 //        10) Создаём квадратную матрицу, размер вводим с клавиатуры.
 //        Заполняем случайными числами в диапазоне от 0 до 50. И выводим на консоль(в виде матрицы).
