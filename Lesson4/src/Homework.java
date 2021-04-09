@@ -7,6 +7,12 @@ import static java.util.Collections.singleton;
 import static java.util.stream.Collectors.toSet;
 
 public class Homework {
+
+    public static boolean check(int i, int j, int length) {
+        return i < length && j < length;
+    }
+
+
     public static void main(String[] args) {
 //        Задачи:
 //         1) Одноклеточная амеба каждые 3 часа делится на 2 клетки. Определить,
@@ -39,7 +45,7 @@ public class Homework {
 
 //        6) Создайте массив из int[] mass = new int[12]; Рандомно заполните его значениями от 0 до 15.
 //        Определите какой элемент является в этом массиве максимальным и сообщите индекс его последнего вхождения в массив.
-//        Пример: {3,4,5,62,7,8,4,-5,7,62,5,1} Максимальный элемент 62, индекс его последнего вхождения в массив = 10
+//        Пример: {3,4,5,62,7,8,4,-5,7,62,5,1} Максимальный элемент 62, индекс его последнего вхождения в массив = 9
 
 //        7) Создайте массив размера 20, заполните его случайными целыми чиселами из отрезка от 0 до 20.
 //        Выведите массив на экран в строку. Замените каждый элемент с нечётным индексом на ноль.
@@ -54,11 +60,12 @@ public class Homework {
 //        Массив не имеет повторяющихся элементов
         int[] mass = {0, 3, 46, 3, 2, 3, 2};
         Arrays.sort(mass);
+        System.out.println(Arrays.toString(mass));
 
         //вариант 1
         int length = mass.length;
         int count = 0;
-        for (int i = 0, j = i + 1; i < length && j < length; i++, j++) {
+        for (int i = 0, j = i + 1; check(i, j, length); i++, j++) {
             if (mass[i] == mass[j]) {
                 count++;
             } else {
@@ -73,7 +80,7 @@ public class Homework {
         //вариант 2
         Set<Integer> tempElements = new HashSet<>();
         Set<String> repeatElements = Arrays.stream(mass)
-                .filter(integer -> !tempElements.add(integer))
+                .filter(mm -> !tempElements.add(mm))
                 .mapToObj(String::valueOf)
                 .collect(toSet());
 

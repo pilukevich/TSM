@@ -178,6 +178,7 @@ public class HomeworkRaman {
             result += a;
         }
         return result;
+//        return a * b;
     }
 
     /*метод triangle(char[][] board, char type) рисует треугольники на квадратной матрице board типа char[][] с любым размером и любым наполнением (не только '*').
@@ -261,6 +262,20 @@ public class HomeworkRaman {
     }
 
     public static void flippingOdds() {
+        int[] mass = {3, 4, 1, 62, 7, 8, 4, -5, 7, 62, 13, 1};
+        for (int i = 0; i < mass.length; i++) {
+            if (mass[i] % 2 != 0) {
+                System.out.print(mass[i]+ " ");
+            }
+        }
+        System.out.println();
+
+        for (int i = mass.length-1; i >= 0 ; i--) {
+            if (mass[i] % 2 != 0) {
+                System.out.print(mass[i]+ " ");
+            }
+        }
+
         for (int i = 1; i < 100; i += 2) {
             System.out.print(i+ " ");
         }
@@ -276,14 +291,14 @@ public class HomeworkRaman {
 //        Пример: {3,4,5,62,7,8,4,-5,7,62,5,1} Максимальный элемент 62, индекс его последнего вхождения в массив = 10
     public static void findingMax(int[] mass) {
         int currentMax = -1;
-        int lastSeen = -1;
+        int maxIndex = -1;
         for (int i = 0; i < mass.length; i++) {
             if (mass[i] >= currentMax) {
                 currentMax = mass[i];
-                lastSeen = i;
+                maxIndex = i;
             }
         }
-        System.out.println("Максимальный эелемент " + currentMax + ", индекс его последнего вхождения в массив = " + (lastSeen + 1));
+        System.out.println("Максимальный эелемент " + currentMax + ", индекс его последнего вхождения в массив = " + (maxIndex));
     }
 
     //        9) Проверить, различны ли все элементы массива, если не различны то вывести элемент повторяющийся
