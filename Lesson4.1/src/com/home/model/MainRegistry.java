@@ -2,6 +2,7 @@ package com.home.model;
 
 public class MainRegistry {
     public static void main(String[] args) {
+        //создаем людей и добавляем в Registry
         Address konstantinsAddress = new Address("Belarus", "Vitebsk");
         Person konstantin = new Person(konstantinsAddress, 20, "Konstantin", Person.MALE);
 

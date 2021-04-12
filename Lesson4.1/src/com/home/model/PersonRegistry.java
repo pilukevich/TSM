@@ -1,10 +1,6 @@
 package com.home.model;
 
-import com.home.model.Address;
-import com.home.model.Person;
-
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 public class PersonRegistry {
@@ -37,7 +33,8 @@ public class PersonRegistry {
         return count;
     }
 
-    public List<Person> getPeople(Address address) {//количество людей
+    public List<Person> getPeople(Address address) {//количество людей проживющих по адресу
+        //можно ли с массивом сделать?
         List<Person> people = new ArrayList<>();
         for (Person person : citizens) {
             Address personsAddress = person.getAddress();

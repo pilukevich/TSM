@@ -1,8 +1,11 @@
 package com.home.andrei;
 
+import lombok.Getter;
+
 import java.util.Random;
 import java.util.Scanner;
 
+@Getter
 public class Computer {
 
 // 1) класс Computer будет содержать следующие поля:
@@ -21,6 +24,7 @@ public class Computer {
     public int randomInt;
 
     public Computer(String cpu, String ram, String ssd) {
+        //sys
         this.cpu = cpu;
         this.ram = ram;
         this.ssd = ssd;
