@@ -20,6 +20,12 @@ public class Computer {
     public boolean test = true;
     public int randomInt;
 
+    public Computer(String cpu, String ram, String ssd) {
+        this.cpu = cpu;
+        this.ram = ram;
+        this.ssd = ssd;
+    }
+
     public Computer(String cpu, String ram, String ssd, int resource) {
         this.cpu = cpu;
         this.ram = ram;
