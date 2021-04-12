@@ -21,6 +21,7 @@ public class Computer {
     public int randomInt;
 
     public Computer(String cpu, String ram, String ssd) {
+        //sys
         this.cpu = cpu;
         this.ram = ram;
         this.ssd = ssd;
