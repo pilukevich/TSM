@@ -1,13 +1,9 @@
-import java.lang.annotation.Native;
-import java.math.BigDecimal;
-import java.math.BigInteger;
-import java.util.List;
-
 public class Practice {
 
 
     public static void main(String[] args) {
 
+        long kkk = 0;
         int bb = 1;
         System.out.println(++bb);//2
 
