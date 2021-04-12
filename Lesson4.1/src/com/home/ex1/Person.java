@@ -5,11 +5,16 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class Person {
+public class Person extends Test {
     public static final String MM = "Constanta";
     public String name; //характиристики, свойства
     public int age;
     public int height;
+
+    @Override
+    String getMyName() {
+        return "Person";
+    }
 
     //инициализатор
     {//static - инициализация статический контент(один раз работает)
@@ -31,12 +36,13 @@ public class Person {
         this.name = name;
         this.age = age;
         this.height = 180;
+
     }
 
-    public Person(String name, int age, int height) {
-        this(name, age);
-        this.height = height;
-    }
+//    public Person(String name, int age, int height) {
+//        this(name, age);
+//        this.height = height;
+//    }
 
     {
         age = 1; // устанавливает по умолчанию значение

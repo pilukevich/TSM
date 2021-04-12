@@ -1,7 +1,14 @@
 package com.home.model;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
 import java.util.Random;
 
+@Getter
+@Setter
+@ToString
 public class Person {
     public static final String MALE = "male";
     public static final String FEMALE = "female";
@@ -34,36 +41,8 @@ public class Person {
         System.out.println("I am living in " + address.toString());
     }
 
+    //в пределах одного пакета или у наследника
     private void secureInfo() {
         System.out.println("Hello, my name is " + name + " and I'm " + age + " years old");
-    }
-
-
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = Math.max(age, 0);
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getSex() {
-        return sex;
     }
 }

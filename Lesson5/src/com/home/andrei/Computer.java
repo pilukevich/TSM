@@ -1,8 +1,11 @@
 package com.home.andrei;
 
+import lombok.Getter;
+
 import java.util.Random;
 import java.util.Scanner;
 
+@Getter
 public class Computer {
 
 // 1) класс Computer будет содержать следующие поля:
