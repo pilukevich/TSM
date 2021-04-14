@@ -10,6 +10,8 @@ public class Info {
      * @param args
      */
     public static void main(String[] args) {
+        //расскзать про выравнивание при коммите.
+        //lombok
         //класс, экземпляр класс (класс это шаблон)
         //конструкторы
         //this в конструкторе
@@ -22,7 +24,5 @@ public class Info {
         //address
         //перегрузка метододов PersonRegistry
         //енам??
-        //
-
     }
 }
