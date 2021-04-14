@@ -1,9 +1,5 @@
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
-import static java.util.Collections.singleton;
 import static java.util.stream.Collectors.toSet;
 
 public class Homework {
@@ -64,17 +60,25 @@ public class Homework {
         System.out.println(Arrays.toString(mass));
 
         //вариант 1
-        int length = mass.length;
-        int count = 0;
-        for (int i = 0, j = i + 1; check(i, j, length); i++, j++) {
-            if (mass[i] == mass[j]) {
-                count++;
+        int[] mass3 = {0, 5, 46, 1, 2, 3};
+        Arrays.sort(mass3);
+        System.out.println(Arrays.toString(mass3));
+        int length = mass3.length;
+        boolean flag = true;
+        List<Integer> result = new ArrayList<>();
+        for (int i = 0, j = i + 1; i < length && j < length; i++, j++) {
+            if (mass3[i] == mass3[j] && flag) {
+                result.add(mass3[i]);
+                flag = false;
             } else {
-                if (count > 0) {
-                    System.out.print(mass[i] + ", ");
-                    count = 0;
-                }
+                flag = true;
             }
+        }
+        if (!result.isEmpty()) {
+            System.out.print("Массив имеет повторяющиеся элементы ");
+            System.out.println(result);
+        } else {
+            System.out.println("Массив не имеет повторяющихся элементов");
         }
 
         System.out.println();
