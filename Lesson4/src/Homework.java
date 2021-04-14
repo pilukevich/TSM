@@ -60,7 +60,7 @@ public class Homework {
         System.out.println(Arrays.toString(mass));
 
         //вариант 1
-        int[] mass3 = {0, 5, 46, 1, 2, 3};
+        int[] mass3 = {0, 5, 46, 1, 2, 3, 46};
         Arrays.sort(mass3);
         System.out.println(Arrays.toString(mass3));
         int length = mass3.length;
