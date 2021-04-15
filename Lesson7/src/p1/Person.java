@@ -28,20 +28,17 @@ public class Person implements Speaker {
         System.out.println("static personTest");
     }
 
-//    public void info() {
-//        Random random = new Random();
-//        if (random.nextInt(40) < 20) {
-//            System.out.println("Hello, my name is " + name);
-//        } else {
-//            secureInfo();
-//        }
-//        System.out.println("I am living in " + address.toString());
-//    }
+    public void info() {
+        System.out.println("Person");
+    }
 
     private void secureInfo() {
         System.out.println("Hello, my name is " + name + " and I'm " + age + " years old");
     }
 
+    /**
+     * имплементируем метод спик от интерфейса Speaker.
+     */
     @Override
     public void speak() {
         Random random = new Random();
@@ -52,9 +49,4 @@ public class Person implements Speaker {
         }
         System.out.println("I am living in " + address.toString());
     }
-
-    /**
-     *  имплементирует метод спик, т.к от интерфейса.
-     */
-
 }

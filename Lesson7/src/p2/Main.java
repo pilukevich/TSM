@@ -12,27 +12,24 @@ public class Main {
         System.out.println(recruit.getName());
         System.out.println(recruit.getRank());
 
-
-//        recruit.info();
-
-
-//        recruit.speak();
+        recruit.info();
+        recruit.speak();
 
         //второй способ.
         Person newRecruit = new Recruit(new Address("Беларусь", "Минск"), 45, "Николай", "male", "рядовой");
-//        newRecruit.info();
+        newRecruit.info();
 
         System.out.println((Person) newRecruit);
 
-//        System.out.println(newRecruit.getRank());
-//        newRecruit.speak();
-//        System.out.println(((Recruit)newRecruit).getRank()); //мы можем привести newRecruit к типу Recruit
+//        System.out.println(newRecruit.getRank()); так нельзя вызвать компилятор ругается
+        newRecruit.speak();
+        System.out.println(((Recruit) newRecruit).getRank()); //мы можем привести newRecruit к типу Recruit
 
         //персон расширяет класс рекрут, но не каждый человек может быть рекрутом
         Person person = new Person(new Address("Беларусь", "Минск"), 45, "Николай", "male");
-//        person.info();
+        person.info();
         System.out.println(person.getName());
-        System.out.println(((Recruit) person).getRank()); //так нельзя
+//        System.out.println(((Recruit) person).getRank()); //так нельзя
 
         List<Person> persons = new ArrayList<>();
         persons.add(recruit);
@@ -43,6 +40,7 @@ public class Main {
         Person newRecruitStatic = new Recruit(new Address("Беларусь", "Минск"), 45, "Николай", "male", "рядовой");
         newRecruitStatic.personTest();//идет по сылке
 
+        //полиморфиз, перегрузка методов
         print(recruit);
         print(person);
         print("Генерал", "sdfdsf");
@@ -58,13 +56,13 @@ public class Main {
 
     private static void print(List<Person> persons) {
         for (Person person : persons) {
-//            if (person instanceof Recruit) {// проверить является ли персон рекрутом
-//                Recruit recruit = (Recruit) person;
-//                if (recruit.getName().equals("Александр")) {
-//                    recruit.setRank("прапорщик");
-//                }
-//                System.out.println(recruit);
-//            }
+            if (person instanceof Recruit) {// проверить является ли персон рекрутом
+                Recruit recruit = (Recruit) person;
+                if (recruit.getName().equals("Александр")) {
+                    recruit.setRank("прапорщик");
+                }
+                System.out.println(recruit);
+            }
             System.out.println(person.getName() + " " + person.getAge());
         }
     }

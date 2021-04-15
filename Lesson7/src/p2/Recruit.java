@@ -23,10 +23,10 @@ public class Recruit extends Person { //final -запрещает наследо
         this.rank = rank;
     }
 
-//    @Override
-//    public void info() {
-//        System.out.println("Recruit");
-//    }
+    @Override
+    public void info() {
+        System.out.println("Recruit");
+    }
 
     public static void personTest() {
         System.out.println("static Recruit test");
