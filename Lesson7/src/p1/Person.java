@@ -24,6 +24,10 @@ public class Person implements Speaker {
         this.sex = sex;
     }
 
+    public Person() {
+
+    }
+
     public static void personTest() {
         System.out.println("static personTest");
     }
