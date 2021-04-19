@@ -15,8 +15,8 @@ public class Main {
         speakers.add(new Dog());
         makeIfo(speakers);
 
-//        SpeakerService speakerService = new SpeakerService();
-//        speakerService.makeSpeakerSpeak(konstantin);
+        SpeakerService speakerService = new SpeakerService();
+        speakerService.makeSpeakerSpeak(konstantin);
 
         PersonRegistry personRegistry = new PersonRegistry(null);
         personRegistry.list();
