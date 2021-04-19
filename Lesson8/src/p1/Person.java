@@ -9,13 +9,13 @@ import java.util.Random;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class Person implements Speaker {
+public class Person {
     public static final String MALE = "male";
     public static final String FEMALE = "female";
-    private Address address;
-    private int age;
     private String name;
+    private int age;
     private String sex = FEMALE;
+    private Address address;
 
     public static void personTest() {
         System.out.println("static personTest");
@@ -28,7 +28,6 @@ public class Person implements Speaker {
     /**
      * имплементируем метод спик от интерфейса Speaker.
      */
-    @Override
     public void speak() {
         Random random = new Random();
         if (random.nextInt(40) < 20) {
