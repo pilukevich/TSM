@@ -14,12 +14,16 @@ public class InformationService implements Information {
     }
 
     public void catapult(Transport transport) {
-        Military military = (Military) transport;
-        if (military.isCatapultSystem()) {
-            System.out.println("Катапультирование прошло успешно");
-            military.setCatapultSystem(false);
+        if (transport instanceof Military) {
+            Military military = (Military) transport;
+            if (military.isCatapultSystem()) {
+                System.out.println("Катапультирование прошло успешно");
+                military.setCatapultSystem(false);
+            } else {
+                System.out.println("У вас нет такой системы");
+            }
         } else {
-            System.out.println("У вас нет такой системы");
+            System.out.println("Ожидаю военный транспорт, а пришел " + transport.getClass());
         }
     }
 
@@ -57,5 +61,10 @@ public class InformationService implements Information {
         } else {
             System.out.println("Вам нужен самолёт побольше");
         }
+    }
+
+    @Override
+    public void method(Transport transport, String str) {
+        System.out.println(transport.getWeight() + str);
     }
 }

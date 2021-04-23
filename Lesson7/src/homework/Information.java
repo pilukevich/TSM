@@ -10,4 +10,6 @@ public interface Information {
     void checkWeightCapacity(Transport transport, double weight);
 
     void checkPassengerCapacity(Transport transport, int people);
+
+    void method(Transport transport, String str);
 }

@@ -1,4 +1,4 @@
-package p8;
+package p2;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,26 +11,25 @@ import java.util.Objects;
 @Setter
 @AllArgsConstructor
 @ToString
-public class Book implements Cloneable {
+public class Person {
+
     private String name;
-    private String author;
-    private int year;
+    private int age;
+
+    public Person() {
+        super();
+    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Book book = (Book) o;
-        return year == book.year && Objects.equals(name, book.name) && Objects.equals(author, book.author);
+        Person person = (Person) o;
+        return name.equals(person.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, author, year);
-    }
-
-    @Override
-    protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
+        return Objects.hash(name);
     }
 }

@@ -53,6 +53,8 @@ public class Main {
                 .countRockets(10)
                 .build();
 
+        Transport[] transports = {civil, military, light, freight};
+
 //        Person.builder().age(34).build();
 
         System.out.println(light);
@@ -60,13 +62,20 @@ public class Main {
         System.out.println(civil);
         System.out.println(military + "\n");
 
-        InformationService informationService = new InformationService();
+        Information informationService = new InformationService();
 
-        informationService.shoot(military);
+        informationService.catapult(light);
+
+        for (int i = 0; i < 10; i++) {
+            informationService.shoot(military);
+        }
+
         informationService.catapult(military);
         informationService.lightInfo(light, 2.1);
         informationService.checkWeightCapacity(freight, 1001);
         informationService.checkPassengerCapacity(civil, 75);
+
+        informationService.method(civil, "Доп условия");
 
 //        light.info(2);
 //        freight.checkWeightCapacity(1001);
