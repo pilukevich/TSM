@@ -22,7 +22,7 @@ public class Main {
 //        System.out.println(personNext.hashCode() == p1.hashCode());
 //        System.out.println(personNext.equals(p1));//
 
-        System.out.println("p1 " + p1.hashCode());
+        System.out.println("a1 " + p1.hashCode());
         System.out.println("p2 " + p2.hashCode());
 
         System.out.println(p1.equals(p2));

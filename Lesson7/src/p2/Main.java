@@ -1,7 +1,7 @@
 package p2;
 
-import p1.Address;
-import p1.Person;
+import a1.Address;
+import a1.Person;
 
 import java.util.ArrayList;
 import java.util.List;

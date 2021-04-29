@@ -4,8 +4,17 @@ public class Practice {
     public static void main(String[] args) {
         String s3 = new String("qwerty");
         ///////////SB////////////
+        String s1 = "sdd" + "sd";
         StringBuilder sb = new StringBuilder();
+        String s2 = sb.append("sdd").append("sd").toString();
+        int i = 0;
+        while (i < 10) {
+            sb.append(++i);
+        }
+        System.out.println(sb.toString());
+
         sb = new StringBuilder(10);
+        System.out.println(sb.capacity());
         sb = new StringBuilder("asdas");
         sb = new StringBuilder(s3);
         System.out.println(sb.capacity());
@@ -25,8 +34,8 @@ public class Practice {
         System.out.println(s);
 
 
-        char[] chars = new char[4];
-        sb.getChars(0, 4, chars, 0);
+        char[] chars = new char[5];
+        sb.getChars(0, 4, chars, 1);
         System.out.println(chars);
         sb.append("asdasd").append(12);
         System.out.println(sb);
@@ -40,7 +49,13 @@ public class Practice {
         System.out.println(sb);
         sb = new StringBuilder("one two three");
         sb.replace(4, 7, "fouasdasdsdar");
-        System.out.println(sb);
+
+        String substring = sb.substring(3);
+
+        System.out.println(sb.toString());
+
+        String str = "carbar";
+        str.replaceAll("a", "!");
     }
 
     private static String method24444() {

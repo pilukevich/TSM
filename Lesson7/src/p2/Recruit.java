@@ -1,9 +1,9 @@
 package p2;
 
+import a1.Address;
+import a1.Person;
 import lombok.Getter;
 import lombok.Setter;
-import p1.Address;
-import p1.Person;
 
 /**
  * Наследование. Recruit(военослужащий) - потомок, Person - класс родитель
