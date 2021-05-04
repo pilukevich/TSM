@@ -1,7 +1,6 @@
 package a2;
 
-//import com.fasterxml.jackson.databind.ObjectMapper;
-
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.tms.io.input.*;
 import com.tms.io.model.Address;
 import com.tms.io.model.Person;
@@ -13,6 +12,8 @@ import com.tms.io.output.TmsWriter;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
@@ -40,7 +41,7 @@ public class Main {
         downloadFromInternet();
         readWriteBinaryObject(person);
         workingWithFiles();
-        readWriteToJSON(person);
+        readWriteToJSON(Arrays.asList(person, person));
         workingWithArchives();
     }
 
@@ -85,6 +86,7 @@ public class Main {
 //
     }
 
+
     public static void readWriteBinaryObject(Person p) throws IOException, ClassNotFoundException {
         System.out.println("BINARY OBJECT");
         ObjectOutputStream stream = new ObjectOutputStream(new FileOutputStream("Lesson11/resources/person.data"));
@@ -102,14 +104,14 @@ public class Main {
         Files.copy(stream, Paths.get(WOLF_FILE));
     }
 
-    public static void readWriteToJSON(Person p) throws IOException {
+    public static void readWriteToJSON(List<Person> p) throws IOException {
         System.out.println("JSON");
-//        ObjectMapper mapper = new ObjectMapper();
+        ObjectMapper mapper = new ObjectMapper();
 //        mapper.configure(MapperFeature.PROPAGATE_TRANSIENT_MARKER, true);
         File f = new File("Lesson11/resources/Person.json");
 
-//        mapper.writeValue(new File("Lesson11/resources/Person.json"), p);
-//        p = mapper.readValue(f, Person.class);
+        mapper.writeValue(f, p);
+        p = mapper.readValue(f, List.class);
         System.out.println(p.toString());
     }
 
