@@ -2,7 +2,7 @@ package com.tms;
 
 import java.math.BigDecimal;
 
-public class Test {
+public class Main {
     public static void main(String[] args) {
         System.out.println("Hello! maven");
 
