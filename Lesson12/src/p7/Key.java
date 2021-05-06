@@ -1,6 +1,9 @@
 package p7;
 
-class Key {
+import lombok.ToString;
+
+@ToString
+class Key implements Comparable<Key> {
     String key;
 
     Key(String key) {
@@ -13,7 +16,12 @@ class Key {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        return key.equals(((Key) obj).key);
+    public boolean equals(Object o) {
+        return key.equals(((Key) o).key);
+    }
+
+    @Override
+    public int compareTo(Key o) {
+        return key.compareTo(o.key);
     }
 }
